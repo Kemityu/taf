@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taf_app/utils/ulis.dart';
 
-
 class PlaylistScreen extends StatelessWidget {
   const PlaylistScreen({super.key});
 
@@ -10,7 +9,7 @@ class PlaylistScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
-      body:  Padding(
+      body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,14 +29,34 @@ class PlaylistScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                ElevatedButton.icon(onPressed: (){}, icon: Icon(Icons.all_inbox_sharp), label: Text('All') ), 
-                SizedBox(width: 10,),
-                ElevatedButton.icon(onPressed: (){}, icon: Icon(Icons.all_inbox_sharp), label: Text('Mariage') ),
-                SizedBox(width: 10,),
-                ElevatedButton.icon(onPressed: (){}, icon: Icon(Icons.all_inbox_sharp), label: Text('Race') ),
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: Icon(Icons.all_inbox_sharp),
+                  label: Text('All'),
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all<Color>(
+                        AppColors.secondaryColor),
+                    foregroundColor: WidgetStateProperty.all<Color>(
+                        Colors.white), // Couleur du texte
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: Icon(Icons.all_inbox_sharp),
+                    label: Text('Mariage')),
+                SizedBox(
+                  width: 10,
+                ),
+                ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: Icon(Icons.all_inbox_sharp),
+                    label: Text('Race')),
               ],
             ),
-        ],
+          ],
         ),
       ),
     );
