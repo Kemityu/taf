@@ -5,6 +5,7 @@ import 'package:taf_app/screens/conference_screen.dart';
 import 'package:taf_app/screens/home_screen.dart';
 import 'package:taf_app/screens/live_screen.dart';
 import 'package:taf_app/screens/playlist_screen.dart';
+import 'package:taf_app/screens/search_screens.dart';
 import 'package:taf_app/utils/ulis.dart';
 
 
@@ -51,7 +52,7 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchScreens()));},
                       icon: const Icon(
                         Icons.search,
                         size: 24,
