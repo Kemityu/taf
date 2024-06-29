@@ -69,6 +69,7 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
           ),
         ),
       ),
+      extendBody: true,
       body: _tabs[_currentIndex],
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,

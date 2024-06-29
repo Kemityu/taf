@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taf_app/utils/ulis.dart';
 
+
 class PlaylistScreen extends StatelessWidget {
   const PlaylistScreen({super.key});
 
@@ -46,14 +47,26 @@ class PlaylistScreen extends StatelessWidget {
                 ElevatedButton.icon(
                     onPressed: () {},
                     icon: Icon(Icons.all_inbox_sharp),
-                    label: Text('Mariage')),
-                SizedBox(
+                    label: Text('Mariage'),
+                     style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all<Color>(
+                        Color.fromRGBO(33, 40, 63, 1)),
+                    foregroundColor: WidgetStateProperty.all<Color>(
+                        Colors.white), // Couleur du texte
+                  )),
+                const SizedBox(
                   width: 10,
                 ),
                 ElevatedButton.icon(
                     onPressed: () {},
                     icon: Icon(Icons.all_inbox_sharp),
-                    label: Text('Race')),
+                    label: Text('Race'),
+                     style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all<Color>(
+                        Color.fromRGBO(33, 40, 63, 1)),
+                    foregroundColor: WidgetStateProperty.all<Color>(
+                        Colors.white), // Couleur du texte
+                  )),
               ],
             ),
           ],

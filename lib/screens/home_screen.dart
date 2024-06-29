@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Center(
-              child:Container(
+              child: Container(
                 decoration: BoxDecoration(
                   color: AppColors.primaryColor,
                   borderRadius: BorderRadius.circular(16),
@@ -36,7 +36,9 @@ class HomeScreen extends StatelessWidget {
                 height: 117,
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Text(
               "Notre sélection pour vous",
               style: GoogleFonts.poppins(
@@ -45,6 +47,60 @@ class HomeScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 164,
+                  height: 212,
+                   child: Column(
+                      children: [
+                        Image.asset('assets/images/Album1.png', height: 164, width: 164,),
+                        SizedBox(height: 2),
+                        Text('Guitar Camp', style: GoogleFonts.roboto(color: AppColors.textColor, fontSize: 17),),
+                      ],
+                    )
+                ),
+                Container(
+                  width: 164,
+                  height: 212,
+                   child: Column(
+                      children: [
+                        Image.asset('assets/images/Album2.png'),
+                        SizedBox(height: 2),
+                        Text('Chill-hop', style: GoogleFonts.roboto(color: AppColors.textColor, fontSize: 17),),
+                      ],
+                    )
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                    width: 164,
+                    height: 212,
+                    child: Column(
+                      children: [
+                        Image.asset('assets/images/Album3.png'),
+                        SizedBox(height: 2),
+                        Text('Pack name', style: GoogleFonts.roboto(color: AppColors.textColor, fontSize: 17),),
+                      ],
+                    )),
+                Container(
+                  width: 164,
+                  height: 212,
+                   child: Column(
+                      children: [
+                        Image.asset('assets/images/Album4.png'),
+                        SizedBox(height: 2),
+                        Text('Pack name', style: GoogleFonts.roboto(color: AppColors.textColor, fontSize: 17),),
+                      ],
+                    )
+                )
+              ],
+            )
           ],
         ),
       ),
