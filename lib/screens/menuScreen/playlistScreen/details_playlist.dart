@@ -1,22 +1,20 @@
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:taf_app/screens/conference_screen.dart';
-import 'package:taf_app/screens/home_screen.dart';
-import 'package:taf_app/screens/live_screen.dart';
-import 'package:taf_app/screens/playlist_screen.dart';
-import 'package:taf_app/screens/search_screens.dart';
+import 'package:taf_app/screens/menuScreen/conferenceScreen/conference_screen.dart';
+import 'package:taf_app/screens/menuScreen/homeScreen/home_screen.dart';
+import 'package:taf_app/screens/menuScreen/liveScreen/live_screen.dart';
+import 'package:taf_app/screens/menuScreen/playlistScreen/navigationplaylist.dart';
+import 'package:taf_app/screens/menuScreen/searchScreen/search_screens.dart';
 import 'package:taf_app/utils/ulis.dart';
 
-
-class BienvenueScreen extends StatefulWidget {
-  const BienvenueScreen({super.key});
-
+class Detailsplaylistscreen extends StatefulWidget {
+  const Detailsplaylistscreen({super.key});
   @override
-  State<BienvenueScreen> createState() => _BienvenueScreenState();
+  State<Detailsplaylistscreen> createState() => _Detailsplaylistscreen();
 }
 
-class _BienvenueScreenState extends State<BienvenueScreen> {
+class _Detailsplaylistscreen extends State<Detailsplaylistscreen> {
   int _currentIndex = 0;
 
   final List<Widget> _tabs = [
@@ -25,7 +23,6 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
     const Center(child: PlaylistScreen()),
     const Center(child: ConferenceScreen()),
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +49,12 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchScreens()));},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SearchScreens()));
+                      },
                       icon: const Icon(
                         Icons.search,
                         size: 24,
@@ -70,8 +72,16 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
           ),
         ),
       ),
-      extendBody: true,
-      body: _tabs[_currentIndex],
+      body: const SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: Text('data', style: TextStyle(color: Colors.white),),
+            )
+          ],
+        ),
+      ),
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -84,7 +94,6 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
             child: CustomNavigationBar(
               backgroundColor: AppColors.backgroundColor,
               elevation: 0,
-              
               items: [
                 CustomNavigationBarItem(
                     icon: Icon(Icons.home, color: Colors.white),
@@ -97,7 +106,7 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
                     )),
                 CustomNavigationBarItem(
                     icon: Icon(Icons.live_tv, color: Colors.white),
-                     title: Text(
+                    title: Text(
                       'Live',
                       style: GoogleFonts.roboto(
                           color: AppColors.textColor,
@@ -106,7 +115,7 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
                     )),
                 CustomNavigationBarItem(
                     icon: Icon(Icons.playlist_play, color: Colors.white),
-                     title: Text(
+                    title: Text(
                       'Playlist',
                       style: GoogleFonts.roboto(
                           color: AppColors.textColor,
@@ -115,7 +124,7 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
                     )),
                 CustomNavigationBarItem(
                     icon: Icon(Icons.video_library, color: Colors.white),
-                     title: Text(
+                    title: Text(
                       'Conference',
                       style: GoogleFonts.roboto(
                           color: AppColors.textColor,

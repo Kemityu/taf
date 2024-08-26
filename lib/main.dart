@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:taf_app/screens/bienvenue_screen.dart';
+import 'package:taf_app/screens/menuScreen/bienvenue_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,17 +14,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.black),
-        useMaterial3: true,
-      ),
-      home: const BienvenueScreen(),
+    return const MaterialApp(
+      home: BienvenueScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
-
-
