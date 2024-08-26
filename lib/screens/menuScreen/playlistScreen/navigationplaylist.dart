@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:taf_app/screens/menuScreen/playlistScreen/otherPlaylistScreen.dart';
+import 'package:taf_app/screens/menuScreen/playlistScreen/marriagePlayslistScreen.dart';
+import 'package:taf_app/screens/menuScreen/playlistScreen/raceScreen.dart';
 import 'package:taf_app/utils/ulis.dart';
 import 'package:taf_app/screens/menuScreen/playlistScreen/playlist_screen.dart';
 
@@ -15,7 +16,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
 
   final List<Widget> list = [
     const allPlaylistScreen(),
-    const Otherplaylistscreen(),
+    const Marriageplaylistscreen(),
+    const RaceplaylistScreen(),
   ];
 
   @override
@@ -49,26 +51,12 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                   icon: const Icon(Icons.all_inbox_sharp),
                   label: const Text('All'),
                   style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all<Color>(
-                        AppColors.secondaryColor),
-                    foregroundColor:
-                        WidgetStateProperty.all<Color>(Colors.white),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton.icon(
-                  onPressed: () {
-                    setState(() {
-                      _currentIndex = 1; 
-                    });
-                  },
-                  icon: const Icon(Icons.all_inbox_sharp),
-                  label: const Text('Mariage'),
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all<Color>(
-                        const Color.fromRGBO(33, 40, 63, 1)),
-                    foregroundColor:
-                        WidgetStateProperty.all<Color>(Colors.white),
+                    backgroundColor: WidgetStateProperty.all(
+                      _currentIndex == 0
+                          ? AppColors.secondaryColor
+                          : const Color.fromRGBO(33, 40, 63, 1),
+                    ),
+                    foregroundColor: WidgetStateProperty.all(Colors.white),
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -79,12 +67,32 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                     });
                   },
                   icon: const Icon(Icons.all_inbox_sharp),
+                  label: const Text('Mariage'),
+                 style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all(
+                      _currentIndex == 1
+                          ? AppColors.secondaryColor
+                          : const Color.fromRGBO(33, 40, 63, 1),
+                    ),
+                    foregroundColor: WidgetStateProperty.all(Colors.white),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      _currentIndex = 2;
+                    });
+                  },
+                  icon: const Icon(Icons.all_inbox_sharp),
                   label: const Text('Race'),
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all<Color>(
-                        const Color.fromRGBO(33, 40, 63, 1)),
-                    foregroundColor:
-                        WidgetStateProperty.all<Color>(Colors.white),
+                 style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all(
+                      _currentIndex == 2
+                          ? AppColors.secondaryColor
+                          : const Color.fromRGBO(33, 40, 63, 1),
+                    ),
+                    foregroundColor: WidgetStateProperty.all(Colors.white),
                   ),
                 ),
               ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:taf_app/screens/menuScreen/bienvenue_screen.dart';
 
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Future.delayed(const Duration(seconds: 29), () {
@@ -14,8 +15,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: BienvenueScreen(),
+    return const  MaterialApp(
+      home: BienvenueScreen(0),
       debugShowCheckedModeBanner: false,
     );
   }

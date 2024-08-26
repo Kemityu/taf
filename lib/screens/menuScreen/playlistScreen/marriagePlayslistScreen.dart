@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taf_app/utils/ulis.dart';
 
-class Otherplaylistscreen extends StatelessWidget {
-  const Otherplaylistscreen({super.key});
+class Marriageplaylistscreen extends StatelessWidget {
+  const Marriageplaylistscreen({super.key});
 
   @override
   Widget build(BuildContext context) {

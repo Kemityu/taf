@@ -5,19 +5,20 @@ import 'package:taf_app/screens/menuScreen/conferenceScreen/conference_screen.da
 import 'package:taf_app/screens/menuScreen/homeScreen/home_screen.dart';
 import 'package:taf_app/screens/menuScreen/liveScreen/live_screen.dart';
 import 'package:taf_app/screens/menuScreen/playlistScreen/navigationplaylist.dart';
-
 import 'package:taf_app/screens/menuScreen/searchScreen/search_screens.dart';
 import 'package:taf_app/utils/ulis.dart';
 
 class BienvenueScreen extends StatefulWidget {
-  const BienvenueScreen({super.key});
+  final int currentIndex;
+
+  const BienvenueScreen(this.currentIndex, {super.key});
 
   @override
   State<BienvenueScreen> createState() => _BienvenueScreenState();
 }
 
 class _BienvenueScreenState extends State<BienvenueScreen> {
-  int _currentIndex = 0;
+  late int _currentIndex;
 
   final List<Widget> _tabs = [
     const Center(child: HomeScreen()),
@@ -25,6 +26,12 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
     const Center(child: PlaylistScreen()),
     const Center(child: ConferenceScreen()),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    _currentIndex = widget.currentIndex;
+  }
 
   @override
   Widget build(BuildContext context) {

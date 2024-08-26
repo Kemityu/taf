@@ -1,6 +1,7 @@
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taf_app/screens/menuScreen/bienvenue_screen.dart';
 import 'package:taf_app/screens/menuScreen/conferenceScreen/conference_screen.dart';
 import 'package:taf_app/screens/menuScreen/homeScreen/home_screen.dart';
 import 'package:taf_app/screens/menuScreen/liveScreen/live_screen.dart';
@@ -72,12 +73,75 @@ class _Detailsplaylistscreen extends State<Detailsplaylistscreen> {
           ),
         ),
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-              child: Text('data', style: TextStyle(color: Colors.white),),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 50),
+                  const CircleAvatar(
+                    radius: 56,
+                    backgroundImage: AssetImage("assets/images/avatar.png"),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'La race de Dieu',
+                    style: GoogleFonts.roboto(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    '366k subscribers 582 videos',
+                    style: GoogleFonts.roboto(
+                        color: Colors.white,
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal),
+                  ),
+                  Text(
+                    'Figma is a free design tool for teams who build products together. Born on the Web, Figma helps the entire product more the',
+                    style: GoogleFonts.roboto(
+                        color: Colors.white,
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    width: 351,
+                    height: 42,
+                    decoration: BoxDecoration(
+                      color: const Color.fromRGBO(39, 39, 39, 1),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          Icons.notifications_off_outlined,
+                          color: Colors.white,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Enregistrer',
+                          style: GoogleFonts.roboto(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),
@@ -137,6 +201,15 @@ class _Detailsplaylistscreen extends State<Detailsplaylistscreen> {
                 setState(() {
                   _currentIndex = index;
                 });
+
+                if (index != 2) {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BienvenueScreen(_currentIndex),
+                    ),
+                  );
+                }
               },
             ),
           ),

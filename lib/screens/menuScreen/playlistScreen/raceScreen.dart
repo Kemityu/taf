@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:taf_app/screens/menuScreen/playlistScreen/details_playlist.dart';
 import 'package:taf_app/utils/ulis.dart';
 
-class allPlaylistScreen extends StatelessWidget {
-
-  const allPlaylistScreen({super.key});
+class RaceplaylistScreen extends StatelessWidget {
+  const RaceplaylistScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+      return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: SingleChildScrollView(
         child: Padding(
@@ -42,14 +40,7 @@ class allPlaylistScreen extends StatelessWidget {
                                     backgroundColor: AppColors.backgroundColor
                                         .withOpacity(0.72),
                                     child: IconButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const Detailsplaylistscreen()),
-                                        );
-                                      },
+                                      onPressed: () {},
                                       icon: const Icon(Icons.play_arrow_sharp,
                                           color: Colors.white),
                                     ),
@@ -117,6 +108,7 @@ class allPlaylistScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
+              
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -206,7 +198,8 @@ class allPlaylistScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height:16),
+                
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -296,12 +289,12 @@ class allPlaylistScreen extends StatelessWidget {
                       )
                     ],
                   ),
+                  
                 ],
               ),
             ],
           ),
         ),
       ),
-    );
-  }
+    );}
 }
