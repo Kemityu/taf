@@ -6,7 +6,9 @@ import 'package:taf_app/screens/menuScreen/homeScreen/home_screen.dart';
 import 'package:taf_app/screens/menuScreen/liveScreen/live_screen.dart';
 import 'package:taf_app/screens/menuScreen/playlistScreen/navigationplaylist.dart';
 import 'package:taf_app/screens/menuScreen/searchScreen/search_screens.dart';
+import 'package:taf_app/screens/profiles/profiles_screen.dart';
 import 'package:taf_app/utils/ulis.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BienvenueScreen extends StatefulWidget {
   final int currentIndex;
@@ -35,6 +37,8 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
@@ -43,21 +47,14 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
         title: Padding(
           padding: const EdgeInsets.only(top: 10, left: 10, bottom: 10),
           child: SizedBox(
-            width: 375,
+            width: screenWidth * 1, 
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset('assets/images/logo.png'),
                 Row(
                   children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.notifications_outlined,
-                        size: 24,
-                        color: Colors.white,
-                      ),
-                    ),
+                  
                     IconButton(
                       onPressed: () {
                         Navigator.push(
@@ -71,9 +68,15 @@ class _BienvenueScreenState extends State<BienvenueScreen> {
                         color: Colors.white,
                       ),
                     ),
-                    const CircleAvatar(
-                      radius: 12,
-                      backgroundImage: AssetImage("assets/images/avatar.png"),
+                    const SizedBox(width: 10,),
+                    IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => profiles()));
+                      },
+                      icon: FaIcon(FontAwesomeIcons.circleUser, size: 24, color: Colors.white, )
                     ),
                   ],
                 ),

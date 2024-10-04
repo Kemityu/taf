@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taf_app/screens/menuScreen/playlistScreen/details_playlist.dart';
 import 'package:taf_app/utils/ulis.dart';
 
 class Marriageplaylistscreen extends StatelessWidget {
@@ -7,7 +8,9 @@ class Marriageplaylistscreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: SingleChildScrollView(
         child: Padding(
@@ -22,8 +25,8 @@ class Marriageplaylistscreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        width: 164,
-                        height: 214,
+                        width: screenWidth * 0.4,
+                        height: screenHeight * 0.3,
                         child: Column(
                           children: [
                             Stack(
@@ -40,7 +43,14 @@ class Marriageplaylistscreen extends StatelessWidget {
                                     backgroundColor: AppColors.backgroundColor
                                         .withOpacity(0.72),
                                     child: IconButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Detailsplaylistscreen()),
+                                        );
+                                      },
                                       icon: const Icon(Icons.play_arrow_sharp,
                                           color: Colors.white),
                                     ),
@@ -67,8 +77,8 @@ class Marriageplaylistscreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 164,
-                        height: 214,
+                        width: screenWidth * 0.4,
+                        height: screenHeight * 0.3,
                         child: Column(
                           children: [
                             Stack(children: [
@@ -108,13 +118,12 @@ class Marriageplaylistscreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
-              
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        width: 164,
-                        height: 214,
+                        width: screenWidth * 0.4,
+                        height: screenHeight * 0.3,
                         child: Column(
                           children: [
                             Stack(
@@ -158,8 +167,8 @@ class Marriageplaylistscreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 164,
-                        height: 214,
+                        width: screenWidth * 0.4,
+                        height: screenHeight * 0.3,
                         child: Column(
                           children: [
                             Stack(children: [
@@ -198,14 +207,13 @@ class Marriageplaylistscreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  const SizedBox(height:16),
-                
+                  const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        width: 164,
-                        height: 214,
+                        width: screenWidth * 0.4,
+                        height: screenHeight * 0.3,
                         child: Column(
                           children: [
                             Stack(
@@ -249,8 +257,8 @@ class Marriageplaylistscreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 164,
-                        height: 214,
+                        width: screenWidth * 0.4,
+                        height: screenHeight * 0.3,
                         child: Column(
                           children: [
                             Stack(children: [
@@ -289,12 +297,12 @@ class Marriageplaylistscreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  
                 ],
               ),
             ],
           ),
         ),
       ),
-    );}
+    );
+  }
 }

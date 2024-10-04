@@ -4,11 +4,12 @@ import 'package:taf_app/screens/menuScreen/playlistScreen/details_playlist.dart'
 import 'package:taf_app/utils/ulis.dart';
 
 class allPlaylistScreen extends StatelessWidget {
-
   const allPlaylistScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: SingleChildScrollView(
@@ -24,8 +25,8 @@ class allPlaylistScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        width: 164,
-                        height: 214,
+                        width: screenWidth * 0.4,
+                        height: screenHeight * 0.3,
                         child: Column(
                           children: [
                             Stack(
@@ -76,8 +77,8 @@ class allPlaylistScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 164,
-                        height: 214,
+                        width: screenWidth * 0.4,
+                        height: screenHeight * 0.3,
                         child: Column(
                           children: [
                             Stack(children: [
@@ -121,8 +122,8 @@ class allPlaylistScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        width: 164,
-                        height: 214,
+                        width: screenWidth * 0.4,
+                        height: screenHeight * 0.3,
                         child: Column(
                           children: [
                             Stack(
@@ -166,8 +167,8 @@ class allPlaylistScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 164,
-                        height: 214,
+                        width: screenWidth * 0.4,
+                        height: screenHeight * 0.3,
                         child: Column(
                           children: [
                             Stack(children: [
@@ -211,8 +212,8 @@ class allPlaylistScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        width: 164,
-                        height: 214,
+                       width: screenWidth * 0.4,
+                        height: screenHeight * 0.3,
                         child: Column(
                           children: [
                             Stack(
@@ -256,8 +257,8 @@ class allPlaylistScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 164,
-                        height: 214,
+                       width: screenWidth * 0.4,
+                        height: screenHeight * 0.3,
                         child: Column(
                           children: [
                             Stack(children: [

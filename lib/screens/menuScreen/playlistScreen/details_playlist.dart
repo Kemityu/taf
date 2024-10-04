@@ -26,6 +26,8 @@ class _Detailsplaylistscreen extends State<Detailsplaylistscreen> {
   ];
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
@@ -103,22 +105,26 @@ class _Detailsplaylistscreen extends State<Detailsplaylistscreen> {
                         fontSize: 12,
                         fontWeight: FontWeight.normal),
                   ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Text(
                     'Figma is a free design tool for teams who build products together. Born on the Web, Figma helps the entire product more the',
+                    textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         color: Colors.white,
                         fontSize: 12,
                         fontWeight: FontWeight.normal),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 30,
                   ),
                   Container(
-                    width: 351,
-                    height: 42,
+                    width: screenWidth * 0.9,
+                    height: screenHeight * 0.05,
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(39, 39, 39, 1),
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(25),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -136,10 +142,418 @@ class _Detailsplaylistscreen extends State<Detailsplaylistscreen> {
                               color: Colors.white,
                               fontSize: 14,
                               fontWeight: FontWeight.w600),
-                        )
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const Icon(
+                          Icons.expand_more, // Icône de flèche vers le bas
+                          size: 30.0, // Taille de l'icône
+                          color: Colors.white, // Couleur de l'icône
+                        ),
                       ],
                     ),
-                  )
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0, left: 12),
+                        child: Container(
+                          height: screenHeight * 0.12,
+                          width: screenWidth * 0.40,
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(39, 39, 39, 1),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                right: 10,
+                                bottom: 10,
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withOpacity(0.7),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  child: Text(
+                                    '12:40',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: screenHeight * 0.12,
+                        width: screenWidth * 0.53,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'How to Export Figma \nPrototype to Video',
+                                  textAlign: TextAlign.left,
+                                  style: GoogleFonts.roboto(
+                                      fontSize: 16, color: Colors.white),
+                                ),
+                                IconButton(
+                                  style: ButtonStyle(
+                                    iconSize: WidgetStateProperty.all(16.0),
+                                    foregroundColor:
+                                        WidgetStateProperty.all(Colors.white),
+                                  ),
+                                  icon: const Icon(Icons.more_vert),
+                                  onPressed: () {},
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 140),
+                              child: Text(
+                                '18 watched',
+                                textAlign: TextAlign.start,
+                                style: GoogleFonts.roboto(
+                                    fontSize: 12,
+                                    color: Colors.white.withOpacity(0.60)),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0, left: 12),
+                        child: Container(
+                          height: screenHeight * 0.12,
+                          width: screenWidth * 0.40,
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(39, 39, 39, 1),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                right: 10,
+                                bottom: 10,
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withOpacity(0.7),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  child: Text(
+                                    '12:40',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: screenHeight * 0.12,
+                        width: screenWidth * 0.53,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'How to Export Figma \nPrototype to Video',
+                                  textAlign: TextAlign.left,
+                                  style: GoogleFonts.roboto(
+                                      fontSize: 16, color: Colors.white),
+                                ),
+                                IconButton(
+                                  style: ButtonStyle(
+                                    iconSize: WidgetStateProperty.all(16.0),
+                                    foregroundColor:
+                                        WidgetStateProperty.all(Colors.white),
+                                  ),
+                                  icon: const Icon(Icons.more_vert),
+                                  onPressed: () {},
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 140),
+                              child: Text(
+                                '18 watched',
+                                textAlign: TextAlign.start,
+                                style: GoogleFonts.roboto(
+                                    fontSize: 12,
+                                    color: Colors.white.withOpacity(0.60)),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0, left: 12),
+                        child: Container(
+                          height: screenHeight * 0.12,
+                          width: screenWidth * 0.40,
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(39, 39, 39, 1),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                right: 10,
+                                bottom: 10,
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withOpacity(0.7),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  child: Text(
+                                    '12:40',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: screenHeight * 0.12,
+                        width: screenWidth * 0.53,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'How to Export Figma \nPrototype to Video',
+                                  textAlign: TextAlign.left,
+                                  style: GoogleFonts.roboto(
+                                      fontSize: 16, color: Colors.white),
+                                ),
+                                IconButton(
+                                  style: ButtonStyle(
+                                    iconSize: WidgetStateProperty.all(16.0),
+                                    foregroundColor:
+                                        WidgetStateProperty.all(Colors.white),
+                                  ),
+                                  icon: const Icon(Icons.more_vert),
+                                  onPressed: () {},
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 140),
+                              child: Text(
+                                '18 watched',
+                                textAlign: TextAlign.start,
+                                style: GoogleFonts.roboto(
+                                    fontSize: 12,
+                                    color: Colors.white.withOpacity(0.60)),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0, left: 12),
+                        child: Container(
+                          height: screenHeight * 0.12,
+                          width: screenWidth * 0.40,
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(39, 39, 39, 1),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                right: 10,
+                                bottom: 10,
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withOpacity(0.7),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  child: Text(
+                                    '12:40',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: screenHeight * 0.12,
+                        width: screenWidth * 0.53,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'How to Export Figma \nPrototype to Video',
+                                  textAlign: TextAlign.left,
+                                  style: GoogleFonts.roboto(
+                                      fontSize: 16, color: Colors.white),
+                                ),
+                                IconButton(
+                                  style: ButtonStyle(
+                                    iconSize: WidgetStateProperty.all(16.0),
+                                    foregroundColor:
+                                        WidgetStateProperty.all(Colors.white),
+                                  ),
+                                  icon: const Icon(Icons.more_vert),
+                                  onPressed: () {},
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 140),
+                              child: Text(
+                                '18 watched',
+                                textAlign: TextAlign.start,
+                                style: GoogleFonts.roboto(
+                                    fontSize: 12,
+                                    color: Colors.white.withOpacity(0.60)),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0, left: 12),
+                        child: Container(
+                          height: screenHeight * 0.12,
+                          width: screenWidth * 0.40,
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(39, 39, 39, 1),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                right: 10,
+                                bottom: 10,
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withOpacity(0.7),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  child: Text(
+                                    '12:40',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: screenHeight * 0.12,
+                        width: screenWidth * 0.53,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'How to Export Figma \nPrototype to Video',
+                                  textAlign: TextAlign.left,
+                                  style: GoogleFonts.roboto(
+                                      fontSize: 16, color: Colors.white),
+                                ),
+                                IconButton(
+                                  style: ButtonStyle(
+                                    iconSize: WidgetStateProperty.all(16.0),
+                                    foregroundColor:
+                                        WidgetStateProperty.all(Colors.white),
+                                  ),
+                                  icon: const Icon(Icons.more_vert),
+                                  onPressed: () {},
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 140),
+                              child: Text(
+                                '18 watched',
+                                textAlign: TextAlign.start,
+                                style: GoogleFonts.roboto(
+                                    fontSize: 12,
+                                    color: Colors.white.withOpacity(0.60)),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                 ],
               ),
             )
